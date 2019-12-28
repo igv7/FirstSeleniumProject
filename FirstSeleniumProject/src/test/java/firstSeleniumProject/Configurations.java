@@ -4,6 +4,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class Configurations {
 	
@@ -12,9 +13,15 @@ public class Configurations {
 	
 	@BeforeEach
 	void init() {
+		//Chrome
 		System.setProperty("webdriver.chrome.driver", "/Users/Igor/Downloads/chromedriver/chromedriver.exe");
-//		ChromeDriver driver = new ChromeDriver();
-		driver = new ChromeDriver();
+//		ChromeDriver driver = new ChromeDriver();//
+//		driver = new ChromeDriver();
+		
+		//FireFox
+		System.setProperty("webdriver.gecko.driver", "/Users/Igor/Downloads/geckodriver-v0.26.0-win64/geckodriver.exe");
+		driver = new FirefoxDriver();
+		
 		System.out.println("Start Test");
 	}
 	
